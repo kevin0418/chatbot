@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_chat import message
+from streamlit.components.v1 import html
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -45,5 +46,5 @@ if submitted and user_input:
 for i in range(len(st.session_state['past'])):
     message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
     if len(st.session_state['generated']) > i:
-        message(st.session_state['generated'][i], key=str(i) + '_bot')
-
+       message(st.session_state['generated'][i], key=str(i) + '_bot')
+ 
